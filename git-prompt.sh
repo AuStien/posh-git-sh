@@ -164,6 +164,7 @@ __posh_git_echo () {
     local BrightGreen='\033[0;92m'
     local BrightYellow='\033[0;93m'
     local BrightCyan='\033[0;96m'
+    local DarkBlue='\033[0;34m'
 
     local DefaultForegroundColor=$(__posh_color '\e[m') # Default no color
     local DefaultBackgroundColor=
@@ -198,10 +199,10 @@ __posh_git_echo () {
     local WorkingForegroundColor=$(__posh_color $Red) # Dark red
     local WorkingBackgroundColor=
 
-    local StashForegroundColor=$(__posh_color $BrightRed) # Red
+    local StashForegroundColor=$(__posh_color $DarkBlue) # Dark blue
     local StashBackgroundColor=
-    local BeforeStash='('
-    local AfterStash=')'
+    local BeforeStash='\$'
+    local AfterStash=''
 
     local LocalDefaultStatusSymbol=''
     local LocalWorkingStatusSymbol=' !'
