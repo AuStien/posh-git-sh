@@ -97,6 +97,14 @@
 #
 ###############################################################################
 
+giton() {
+  GIT_PS1_ENABLED=on
+}
+
+gitoff() {
+  GIT_PS1_ENABLED=off
+}
+
 # Convenience function to set PS1 to show git status. Must supply exactly
 # either two or four arguments that specify the prefix and suffix of the git
 # status string.
@@ -157,6 +165,8 @@ __posh_git_echo () {
     if [ "$(git config --bool bash.enableGitStatus)" = 'false' ]; then
         return;
     fi
+
+    [[ "${GIT_PS1_ENABLED}" == "off" ]] && return
 
     local Red='\033[0;31m'
     local Green='\033[0;32m'
